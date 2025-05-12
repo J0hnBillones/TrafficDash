@@ -9,8 +9,8 @@ class AllSprites(pygame.sprite.Group):
 	def __init__(self):
 		super().__init__()
 		self.offset = pygame.math.Vector2()
-		self.bg = pygame.image.load("D:/TrafficDash/graphics/main/map.png").convert()
-		self.fg = pygame.image.load("D:/TrafficDash/graphics/main/overlay.png").convert_alpha()
+		self.bg = pygame.image.load("../TrafficDash/graphics/main/map.png").convert()
+		self.fg = pygame.image.load("../TrafficDash/graphics/main/overlay.png").convert_alpha()
 
 	def customize_draw(self):
 		# change the offset vector
@@ -52,20 +52,20 @@ goaltext_surf = font.render('Goal: Cross the road and avoid getting hit by a car
 goaltext_rect = goaltext_surf.get_rect(topleft = (10, WINDOW_HEIGHT - 50))
 
 # music
-music = pygame.mixer.Sound("D:/TrafficDash/audio/music.mp3")
-victory = pygame.mixer.Sound("D:/TrafficDash/audio/victory.mp3")
+music = pygame.mixer.Sound("../TrafficDash/audio/music.mp3")
+victory = pygame.mixer.Sound("../TrafficDash/audio/victory.mp3")
 music.play(loops = -1)
 
 # sprite setup 
 # simple
 for file_name, pos_list in SIMPLE_OBJECTS.items():
-	path = f"D:/TrafficDash/graphics/objects/simple/{file_name}.png"
+	path = f"../TrafficDash/graphics/objects/simple/{file_name}.png"
 	surf = pygame.image.load(path).convert_alpha()
 	for pos in pos_list:
 		SimpleSprite(surf, pos, [all_sprites,obstacle_sprites])
 # long
 for file_name, pos_list in LONG_OBJECTS.items():
-	surf = pygame.image.load(f"D:/TrafficDash/graphics/objects/long/{file_name}.png").convert_alpha()
+	surf = pygame.image.load(f"../TrafficDash/graphics/objects/long/{file_name}.png").convert_alpha()
 	for pos in pos_list:
 		LongSprite(surf, pos, [all_sprites,obstacle_sprites])
 
