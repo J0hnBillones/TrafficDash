@@ -7,9 +7,9 @@ class Car(pygame.sprite.Sprite):
 		super().__init__(groups)
 		self.name = 'car'
 
-		for _, _, img_list in walk("D:/TrafficDash/graphics/cars"):
+		for _, _, img_list in walk("../TrafficDash/graphics/cars"):
 			car_name = choice(img_list) 
-		self.image = pygame.image.load("D:/TrafficDash/graphics/cars/" + car_name).convert_alpha()
+		self.image = pygame.image.load("../TrafficDash/graphics/cars/" + car_name).convert_alpha()
 		self.rect = self.image.get_rect(center = pos)
 
 		# float based movement
