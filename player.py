@@ -53,7 +53,7 @@ class Player(pygame.sprite.Sprite):
 
 	def import_assets(self):
 		self.animations = {}
-		for index, folder in enumerate(walk('D:/TrafficDash/graphics/player')):
+		for index, folder in enumerate(walk('../TrafficDash/graphics/player')):
 			if index == 0:
 				for name in folder[1]:
 					self.animations[name] = []
